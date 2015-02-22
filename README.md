@@ -14,13 +14,15 @@ yurie
 
 ```sh
 $ npm install
-$ npm install -g gulp
-$ gulp build
+$ npm run bower
+$ npm run build
 ```
 
-## Running
+## Developing
 
 ```sh
+$ npm install -g gulp
+$ gulp watch
 $ gulp webserver
 ```
 
