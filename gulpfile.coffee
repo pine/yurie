@@ -8,6 +8,7 @@ plumber = require 'gulp-plumber'
 concat = require 'gulp-concat'
 webserver = require 'gulp-webserver'
 
+bower = require 'gulp-bower'
 coffee = require 'gulp-coffee'
 jade = require 'gulp-jade'
 less = require 'gulp-less'
@@ -124,9 +125,13 @@ gulp.task 'vendor-prod-css', ->
     .pipe rename( suffix: '.min' )
     .pipe gulp.dest('dist/')
 
+# -----------------------------------------------------------------------------
+
+gulp.task 'bower', ->
+  bower( cmd: 'install')
+
 gulp.task 'clean', (cb) ->
   del(['src/js/**/*.js'], cb)
- 
 
 gulp.task 'webserver', ->
   gulp.src 'dist'
@@ -135,7 +140,6 @@ gulp.task 'webserver', ->
       livereload: true
       open: false
 #      https: true
-
 
 gulp.task 'default', (cb) ->
   runSequence(
