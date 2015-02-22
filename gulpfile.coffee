@@ -136,10 +136,12 @@ gulp.task 'clean', (cb) ->
 gulp.task 'webserver', ->
   gulp.src 'dist'
     .pipe webserver
-#      host: 'yurie-local.pine.moe'
       livereload: true
       open: false
-#      https: true
+      proxies: [
+        source: '/ya'
+        target: 'http://localhost:3000/'
+      ]
 
 gulp.task 'default', (cb) ->
   runSequence(
@@ -155,7 +157,7 @@ gulp.task 'build', (cb) ->
     ['jade-prod', 'less-prod', 'vendor-prod', 'browserify-prod'],
     cb)
   
-gulp.task 'watch', (cb) ->
+gulp.task 'watch', ['webserver'], (cb) ->
   runSequence 'default', ->
     gulp.watch ['src/js/**/*.js'], ['browserify']
 
