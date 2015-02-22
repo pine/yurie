@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+@import "mixins/vendor-prefixes.less";
+
+// メニューバー
+.slideUp {
+  top:-100px;
+}
+
+.headroom {
+  .transition(all 0.4s ease-out);
+}
+
+header.secondary {
+  height:100px;
+  min-height: 100px;
+  padding-top:0px;
+}
+
+body.y-progress * {
+  cursor: progress;
+}
+
+#player {
+  margin: 30px 0 20px;
+  min-height: 800px;
+  
+  audio {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .file {
+    cursor: pointer;
+    .user-select(none);
+  }
+  
+  .cover {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .meta {
+    font-size: 12px;
+    
+    .panel-heading {
+      font-size: 13px;
+    }
+    
+    .icon {
+      display: inline-block;
+      width: 20px;
+      margin-right: 5px;
+      text-align: center;
+    }
+  }
+}
+
+
+footer {
+  background-color: #191919;
+  color: #777;
+  padding: 15px 0;
+  font-size: 12px;
+  
+  p {
+    margin: 0;
+  }
+}

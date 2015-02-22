@@ -1,0 +1,40 @@
+div.container
+  div.row
+    div.col-md-3.col-lg-3
+      div.row
+        div.col-md-12.col-sm-3.col-xs-4
+          img.cover(v-attr="src: cover")
+        
+        div.col-md-12.col-sm-9.col-xs-8
+          div.panel.panel-default.meta(v-show="meta || $parent.progress")
+            div.panel-heading
+              span.icon
+                i.fa.fa-music(v-show="!$parent.progress")
+                i.fa.fa-spinner.fa-pulse(src="images/loading.gif", v-show="$parent.progress")
+              
+              span(v-show="meta") {{ meta.title }}
+            
+            ul.list-group(v-show="meta")
+              li.list-group-item {{ meta.album | join }}
+              li.list-group-item {{ meta.artist | join }}
+    
+    div.col-md-9.col-lg-9
+      div.row
+        div.col-md-12
+          audio(controls)
+      
+      div.row
+        div.col-md-12
+          table.table.table-hover
+            thead
+              tr
+                th #
+                th Name
+                th Provider
+
+            tbody
+              tr.file(v-repeat="file: files", v-on="dblclick: play(file)")
+                td {{ $index + 1 }}
+                td {{ file.title }}
+                td {{ file.provider | providerToName }}
+      
