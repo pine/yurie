@@ -2,7 +2,7 @@ yurie
 ------
 [![Build Status](https://drone.io/github.com/pine613/yurie/status.png)](https://drone.io/github.com/pine613/yurie/latest)
 [![Dependency Status](https://david-dm.org/pine613/yurie.svg)](https://david-dm.org/pine613/yurie)
-[![devDependency Status](https://david-dm.org/pine613/yurie/dev-status.svg)](https://david-dm.org/pine613/yurie#info=devDependencies)
+[![devDependency Status](https://david-dm.org/pine613/yurie/dev-status.svg)](https://david-dm.org/pine613/yurie#info=devDependencies) [![Greenkeeper badge](https://badges.greenkeeper.io/pine/yurie.svg)](https://greenkeeper.io/)
 
 **CAUTION!! THIS IS AN EXPERIMENTAL REPOSITORY**
 
